@@ -36,8 +36,9 @@ if((age<0 || age>100||isNaN(age))||(Km<0||isNaN(Km))){
   `euro ${totPrice.toFixed(2)}
   `;
 
+  const  scontoVenti=prompt('codice sconto del 20% digita SCONTO20');
+  
   if(age>=0 && age<=20){
-    const  scontoVenti=prompt('hai diritto a uno codice sconto del 20% digita SCONTO20');
     if(scontoVenti=='SCONTO20'){
     document.getElementById('dc-discount').innerHTML=
 
@@ -51,19 +52,21 @@ if((age<0 || age>100||isNaN(age))||(Km<0||isNaN(Km))){
       `<h1 class="error">Codice errato reinserisci il codice</h1>
       `;
      }
-  }else if(age>65){
+  }
+  // else if(age>65){
+    
+  //   document.getElementById('dc-discount').innerHTML=
+
+  //   `<h2>Sconto</h2>
+  //    Hai uno sconto di euro ${discount40} <br>
+  //    pari al 40% del totale<br>
+  //    Il prezzo del biglietto è pari a euro ${lastPrice40.toFixed(2)} 
+  //   `;
+  // }
+  else{
     
     document.getElementById('dc-discount').innerHTML=
-
-    `<h2>Sconto</h2>
-     Hai uno sconto di euro ${discount40} <br>
-     pari al 40% del totale<br>
-     Il prezzo del biglietto è pari a euro ${lastPrice40.toFixed(2)} 
-    `;
-  }else{
-    prompt('')
-    document.getElementById('discount-none').innerHTML=
-    `
+    `Codice non valido per la tua fascia di età
     `;
   }
 }
