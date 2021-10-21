@@ -1,12 +1,12 @@
 
-var age = prompt('Età passeggero')
-var Km = prompt('Km da percorrere')
+const age = prompt('Età passeggero')
+const Km = prompt('Km da percorrere')
 const pricePerK = 0.21;
-var totPrice = Km * pricePerK;
-var discount20 = ((totPrice /100)*20).toFixed(2); 
-var discount40 = ((totPrice /100)*40).toFixed(2); 
-var lastPrice20 = totPrice - discount20;
-var lastPrice40 = totPrice - discount40;
+const totPrice = Km * pricePerK;
+const discount20 = ((totPrice /100)*20).toFixed(2); 
+const discount40 = ((totPrice /100)*40).toFixed(2); 
+const lastPrice20 = totPrice - discount20;
+const lastPrice40 = totPrice - discount40;
 
 console.log(age);
 console.log(Km);
