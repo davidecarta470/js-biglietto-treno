@@ -15,7 +15,7 @@ console.log(discount20);
 console.log(discount40);
 
 
-if((age<0 || age>100||isNaN(age))||(Km<0||isNaN(Km))){
+if((age<0 || age>100)||(Km<0)){
   document.getElementById('invalid').innerHTML=
     `<h1 class="error">Dati non validi</h1>
     `;
@@ -33,21 +33,28 @@ if((age<0 || age>100||isNaN(age))||(Km<0||isNaN(Km))){
   `;
 
   document.getElementById('dc-tot').innerHTML=
-  `${totPrice}
+  `${totPrice.toFixed(2)}
   `;
 
   if(age>=0 && age<18){
     document.getElementById('dc-discount').innerHTML=
-    `Hai uno sconto di ${discount20} euro<br>
+    `<h2>Sconto</h2>
+     Hai uno sconto di ${discount20} euro<br>
      pari al 20% del totale<br>
      Il prezzo del biglietto è pari a ${lastPrice20.toFixed(2)} euro
     `;
   }else if(age>65){
   
     document.getElementById('dc-discount').innerHTML=
-    `Hai uno sconto di ${discount40} euro<br>
+
+    `<h2>Sconto</h2>
+     Hai uno sconto di ${discount40} euro<br>
      pari al 40% del totale<br>
      Il prezzo del biglietto è pari a ${lastPrice40.toFixed(2)} euro
+    `;
+  }else{
+    document.getElementById('discount-none').innerHTML=
+    `
     `;
   }
 }
