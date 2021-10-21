@@ -29,28 +29,36 @@ if((age<0 || age>100)||(Km<0)){
   `;
 
   document.getElementById('dc-price-km').innerHTML=
-  `${pricePerK}
+  `euro ${pricePerK}
   `;
 
   document.getElementById('dc-tot').innerHTML=
-  `${totPrice.toFixed(2)}
+  `euro ${totPrice.toFixed(2)}
   `;
 
-  if(age>=0 && age<18){
+  if(age>=0 && age<=20){
+    const  scontoVenti=prompt('hai diritto a uno codice sconto del 20% digita SCONTO20');
+    if(scontoVenti=='SCONTO20'){
     document.getElementById('dc-discount').innerHTML=
+
     `<h2>Sconto</h2>
-     Hai uno sconto di ${discount20} euro<br>
+     Hai uno sconto di euro ${discount20} <br>
      pari al 20% del totale<br>
-     Il prezzo del biglietto è pari a ${lastPrice20.toFixed(2)} euro
+     Il prezzo del biglietto è pari a euro ${lastPrice20.toFixed(2)} 
     `;
+     }else{
+      document.getElementById('invalid').innerHTML=
+      `<h1 class="error">Codoce errato reinserisci il codice</h1>
+      `;
+     }
   }else if(age>65){
   
     document.getElementById('dc-discount').innerHTML=
 
     `<h2>Sconto</h2>
-     Hai uno sconto di ${discount40} euro<br>
+     Hai uno sconto di euro ${discount40} <br>
      pari al 40% del totale<br>
-     Il prezzo del biglietto è pari a ${lastPrice40.toFixed(2)} euro
+     Il prezzo del biglietto è pari a euro ${lastPrice40.toFixed(2)} 
     `;
   }else{
     document.getElementById('discount-none').innerHTML=
