@@ -15,7 +15,13 @@ console.log(discount20);
 console.log(discount40);
 
 
-if((age<0 || age>100)||(Km<0)){
+
+// if(isNaN(numPlayer)){
+//   giocoValido = false;
+//   errorMsg = 'Inserire un numero valido';
+// }
+
+if((age<0 || age>100)||(Km<0||isNaN(Km))){
   document.getElementById('invalid').innerHTML=
     `<h1 class="error">Dati non validi</h1>
     `;
