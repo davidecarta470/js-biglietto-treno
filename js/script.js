@@ -15,7 +15,7 @@ console.log(discount20);
 console.log(discount40);
 
 
-if((age<0 || age>100)||(Km<0)){
+if((age<0 || age>100||isNaN(age))||(Km<0||isNaN(Km))){
   document.getElementById('invalid').innerHTML=
     `<h1 class="error">Dati non validi</h1>
     `;
@@ -48,11 +48,11 @@ if((age<0 || age>100)||(Km<0)){
     `;
      }else{
       document.getElementById('invalid').innerHTML=
-      `<h1 class="error">Codoce errato reinserisci il codice</h1>
+      `<h1 class="error">Codice errato reinserisci il codice</h1>
       `;
      }
   }else if(age>65){
-  
+    
     document.getElementById('dc-discount').innerHTML=
 
     `<h2>Sconto</h2>
@@ -61,6 +61,7 @@ if((age<0 || age>100)||(Km<0)){
      Il prezzo del biglietto è pari a euro ${lastPrice40.toFixed(2)} 
     `;
   }else{
+    prompt('')
     document.getElementById('discount-none').innerHTML=
     `
     `;
